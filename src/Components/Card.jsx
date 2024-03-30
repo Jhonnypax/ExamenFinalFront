@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ContextGlobal } from "./utils/global.context";
+import "./card.css";
 
 const Card = ({ id, name, username }) => {
   const { state, dispatch } = useContext(ContextGlobal);
@@ -7,8 +8,7 @@ const Card = ({ id, name, username }) => {
   const addFav = () => {
     const fav = { id, name, username };
     dispatch({ type: "ADD_FAV", payload: fav });
-    // Aquí iría la lógica para agregar la Card en el localStorage
-    // Ejemplo: localStorage.setItem('favDentist', JSON.stringify(fav));
+    localStorage.setItem(`favDentist_${id}`, JSON.stringify(fav));
   };
 
   return (

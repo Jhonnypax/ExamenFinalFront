@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "./utils/global.context";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { state, dispatch } = useGlobalContext();
@@ -12,7 +13,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav">
-      <div className="logo">DH odonto</div>
+        <div className="logo">DH odonto</div>
         <ul>
           <li>
             <Link to="/">Home</Link>
